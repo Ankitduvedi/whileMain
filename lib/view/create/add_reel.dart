@@ -56,7 +56,7 @@ class _AddReelState extends State<AddReel> {
       isloading = true;
     });
 
-    DateTime now = DateTime.now();
+    // DateTime now = DateTime.now();
     // File video = _compressVideo(path);
     File video = File(path);
     var stream = http.ByteStream(video.openRead().cast());
@@ -94,18 +94,18 @@ class _AddReelState extends State<AddReel> {
           Utils.toastMessage(error.toString());
         });
         // Now you can use the videoUrl as needed, for example, storing it in a variable or database
-        print('Uploaded video URL: $videoUrl');
+        // print('Uploaded video URL: $videoUrl');
 
         // You can use the videoUrl as needed, for example, store it in a variable, database, etc.
         // You can then use this URL to display the video or perform other operations.
       } else {
-        print('Failed to upload video. Status code: ${response.statusCode}');
+        // print('Failed to upload video. Status code: ${response.statusCode}');
       }
     } catch (error) {
-      print('Error uploading video: $error');
+      // print('Error uploading video: $error');
     }
 
-    print(url);
+    // print(url);
 
     // firebase_storage.Reference storageRef = firebase_storage
     //     .FirebaseStorage.instance

@@ -60,7 +60,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 _onTabTapped(0);
               },
               icon: const Icon(
-                Icons.home,
+                Icons.home_outlined,
                 size: 30,
                 color: Colors.white,
               ),
@@ -70,7 +70,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 _onTabTapped(1);
               },
               icon: const Icon(
-                Icons.movie_creation_outlined,
+                Icons.videocam_outlined,
                 size: 30,
                 color: Colors.white,
               ),
@@ -80,16 +80,17 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 onPressed: () {
                   _onTabTapped(2);
                 },
-                icon: Image.asset(
-                  'assets/whilelogowithoutname.png',
-                  fit: BoxFit.fill,
+                icon: const Icon(
+                  Icons.slow_motion_video_outlined,
+                  size: 30,
+                  color: Colors.white,
                 )),
             IconButton(
               onPressed: () {
                 _onTabTapped(3);
               },
               icon: const Icon(
-                Icons.message,
+                Icons.message_outlined,
                 size: 30,
                 color: Colors.white,
               ),
@@ -99,7 +100,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 _onTabTapped(4);
               },
               icon: const Icon(
-                Icons.account_circle,
+                Icons.account_circle_outlined,
                 size: 30,
                 color: Colors.white,
               ),

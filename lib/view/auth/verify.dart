@@ -89,7 +89,7 @@ class _MyVerifyState extends State<MyVerify> {
                 focusedPinTheme: focusedPinTheme,
                 submittedPinTheme: submittedPinTheme,
                 showCursor: true,
-                onCompleted: (pin) => print(pin),
+                onCompleted: (pin) => (pin),
               ),
               const SizedBox(
                 height: 20,

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:while_app/resources/colors.dart';
-import 'package:while_app/resources/components/header_widget.dart';
-import 'package:while_app/resources/components/password_container_widget.dart';
 import 'package:while_app/resources/components/round_button.dart';
 import 'package:while_app/resources/components/text_container_widget.dart';
 import 'package:while_app/utils/utils.dart';

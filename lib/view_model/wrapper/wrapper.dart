@@ -10,11 +10,9 @@ class Wrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final firebaseUser = context.watch<User?>();
-    print(firebaseUser == null);
     if (firebaseUser != null) {
       return const HomeScreen();
     } else {
-      //return const MyPhone();
       return const LoginScreen();
     }
   }

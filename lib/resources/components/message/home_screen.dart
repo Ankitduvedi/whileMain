@@ -132,7 +132,7 @@ class _HomeScreenFinalState extends State<HomeScreenFinal> {
                           userSnapshot.data!.data() as Map<String, dynamic>;
                       final chatUser = ChatUser.fromJson(userData);
                       // DBHelper.insertUser(chatUser);
-                      print(chatUser.name);
+                      // print(chatUser.name);
                       // print(wholeDataList);
 
                       // The checkindex is not -1, meaning a match was found
@@ -146,8 +146,8 @@ class _HomeScreenFinalState extends State<HomeScreenFinal> {
                       //         wholeDataList[localDataIndex]['DummyData'])
                       //     : null;
                       var localdata = '';
-                      print("///////////////");
-                      print(localdata);
+                      // print("///////////////");
+                      // print(localdata);
                       // final String? imageBase64 =
                       //     localdata['image'];
                       // final Uint8List? image = imageBase64 != null

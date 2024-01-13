@@ -60,7 +60,7 @@ class APIs {
       if (t != null) {
         me.pushToken = t;
         log('Push Token: $t');
-        print('Push Token: $t');
+        // print('Push Token: $t');
       }
     });
 
@@ -306,7 +306,7 @@ class APIs {
   // for getting all users from firestore database
   static Stream<QuerySnapshot<Map<String, dynamic>>> getAllUsers(
       List<String> userIds) {
-    print('\nUserIds: $userIds');
+    // print('\nUserIds: $userIds');
 
     return firestore
         .collection('users')
