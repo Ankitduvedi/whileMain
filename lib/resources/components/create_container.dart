@@ -19,7 +19,7 @@ class CreateContainer extends ConsumerWidget {
       margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
-        gradient: LinearGradient(
+        gradient: const LinearGradient(
           colors: [AppColors.theme1Color, AppColors.buttonColor],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
@@ -53,7 +53,7 @@ class CreateContainer extends ConsumerWidget {
                   ),
                 ),
                 Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     color: Colors.white,
                   ),
