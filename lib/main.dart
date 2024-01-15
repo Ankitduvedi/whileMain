@@ -13,7 +13,6 @@ import 'package:while_app/view_model/wrapper/wrapper.dart';
 import 'firebase_options.dart';
 import 'utils/routes/routes.dart';
 
-
 final userProvider = river.StreamProvider((ref) {
   return FirebaseFirestore.instance
       .collection('users')
@@ -46,7 +45,7 @@ class MyApp extends river.ConsumerWidget {
       child: const MaterialApp(
         title: 'While',
         debugShowCheckedModeBanner: false,
-        initialRoute: RoutesName.splash,
+        initialRoute: RoutesName.home,
         onGenerateRoute: Routes.generateRoute,
         home: Wrapper(),
       ),
