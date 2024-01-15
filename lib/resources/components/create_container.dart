@@ -5,43 +5,65 @@ import '../colors.dart';
 
 class CreateContainer extends ConsumerWidget {
   final String text;
-  final function;
-  const CreateContainer(
-      {super.key, required this.text, required this.function});
+  final Function() function;
+
+  const CreateContainer({
+    Key? key,
+    required this.text,
+    required this.function,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    //final currentTheme = ref.watch(themeNotifierProvider);
-    var w = MediaQuery.of(context).size.width;
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-      child: Container(
-        padding: const EdgeInsets.all(2),
-        decoration: const BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(11)),
-          gradient: LinearGradient(
-              colors: [AppColors.theme1Color, AppColors.buttonColor]),
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+        gradient: LinearGradient(
+          colors: [AppColors.theme1Color, AppColors.buttonColor],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
         ),
-        child: Container(
-          width: w / 1.1,
-          decoration: const BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.all(Radius.circular(10)),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.3),
+            spreadRadius: 2,
+            blurRadius: 5,
+            offset: const Offset(0, 2),
           ),
-          child: ListTile(
-            onTap: function,
-            leading: Text(
-              text,
-              style:
-                  const TextStyle(fontSize: 15),
-            ),
-            trailing: Container(
-              decoration: BoxDecoration(
-                  shape: BoxShape.circle, border: Border.all(width: 1)),
-              child: const Icon(
-                Icons.add,
-                color: Colors.black,
-              ),
+        ],
+      ),
+      child: Material(
+        borderRadius: BorderRadius.circular(15),
+        color: Colors.transparent,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(15),
+          onTap: function,
+          child: Container(
+            padding: const EdgeInsets.all(16),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  text,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.white,
+                  ),
+                  padding: const EdgeInsets.all(8),
+                  child: const Icon(
+                    Icons.add,
+                    color: AppColors.theme1Color,
+                  ),
+                ),
+              ],
             ),
           ),
         ),
