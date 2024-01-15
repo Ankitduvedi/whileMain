@@ -34,47 +34,49 @@ class ProfileScreen extends StatelessWidget {
     return //SafeArea(child:
         Scaffold(
       backgroundColor: Colors.black,
-      body: DefaultTabController(
-        length: 3,
-        child: NestedScrollView(
-          headerSliverBuilder: (context, _) {
-            return [
-              SliverList(
-                delegate: SliverChildListDelegate(
-                  const [ProfileDataWidget()],
+      body: SafeArea(
+        child: DefaultTabController(
+          length: 3,
+          child: NestedScrollView(
+            headerSliverBuilder: (context, _) {
+              return [
+                SliverList(
+                  delegate: SliverChildListDelegate(
+                    const [ProfileDataWidget()],
+                  ),
                 ),
-              ),
-            ];
-          },
-          body: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              const Material(
-                color: Colors.black,
-                child: TabBar(
-                  padding: EdgeInsets.all(0),
-                  indicatorColor: Colors.white,
-                  tabs: tabBarIcons,
+              ];
+            },
+            body: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                const Material(
+                  color: Colors.black,
+                  child: TabBar(
+                    padding: EdgeInsets.all(0),
+                    indicatorColor: Colors.white,
+                    tabs: tabBarIcons,
+                  ),
                 ),
-              ),
-              Expanded(
-                child: TabBarView(
-                  children: [
-                    Center(child: FirebaseImageScreen()),
-                    const Center(
-                        child: Text(
-                      "Become a Mentor",
-                      style: TextStyle(color: Colors.white),
-                    )),
-                    const Center(
-                        child: Text(
-                      "Become a Freelancer",
-                      style: TextStyle(color: Colors.white),
-                    )),
-                  ],
+                Expanded(
+                  child: TabBarView(
+                    children: [
+                      Center(child: FirebaseImageScreen()),
+                      const Center(
+                          child: Text(
+                        "Become a Mentor",
+                        style: TextStyle(color: Colors.white),
+                      )),
+                      const Center(
+                          child: Text(
+                        "Become a Freelancer",
+                        style: TextStyle(color: Colors.white),
+                      )),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
