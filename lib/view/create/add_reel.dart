@@ -12,7 +12,6 @@ import 'package:while_app/resources/components/text_container_widget.dart';
 import 'package:while_app/resources/components/video_player.dart';
 import 'package:http/http.dart' as http;
 import 'package:while_app/utils/utils.dart';
-import 'dart:async';
 
 class AddReel extends StatefulWidget {
   final String video;

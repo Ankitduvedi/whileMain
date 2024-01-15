@@ -8,8 +8,8 @@ import 'package:image_picker/image_picker.dart';
 import 'package:while_app/main.dart';
 import 'package:while_app/resources/components/message/models/chat_user.dart';
 import 'package:while_app/view/home_screen.dart';
-import 'components/message/apis.dart';
-import 'components/message/helper/dialogs.dart';
+import '../../resources/components/message/apis.dart';
+import '../../resources/components/message/helper/dialogs.dart';
 
 //profile screen -- to show signed in user info
 class EditUserProfileScreen extends StatefulWidget {

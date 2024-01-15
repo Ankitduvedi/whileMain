@@ -31,8 +31,7 @@ class ProfileScreen extends StatelessWidget {
       ),
     ];
 
-    return //SafeArea(child:
-        Scaffold(
+    return Scaffold(
       backgroundColor: Colors.black,
       body: SafeArea(
         child: DefaultTabController(
@@ -61,7 +60,7 @@ class ProfileScreen extends StatelessWidget {
                 Expanded(
                   child: TabBarView(
                     children: [
-                      Center(child: FirebaseImageScreen()),
+                      Center(child: CreatorProfile()),
                       const Center(
                           child: Text(
                         "Become a Mentor",
