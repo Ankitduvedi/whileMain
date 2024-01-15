@@ -60,7 +60,7 @@ class CreatorProfile extends StatelessWidget {
                           onTap: () =>
                               Navigator.of(context).push(MaterialPageRoute(
                                   builder: (context) => CreatorReelsScreen(
-                                        video: videoList[0],
+                                        video: videoList[startIndex + index],
                                         index: 0,
                                       ))),
                           child: ClipRRect(
