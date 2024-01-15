@@ -5,6 +5,7 @@ import 'package:video_player/video_player.dart';
 import 'package:while_app/controller/feed_item.dart';
 import 'package:while_app/controller/videos_lists.dart';
 import 'package:while_app/data/model/video_model.dart';
+import 'package:while_app/resources/components/message/helper/dialogs.dart';
 import '../utils/data_provider.dart';
 import 'package:provider/provider.dart' as provi;
 
@@ -17,6 +18,7 @@ class ReelsScreen extends ConsumerStatefulWidget {
 
 class _ReelsScreenState extends ConsumerState<ReelsScreen> {
   int _currentPage = 0;
+  int _lastPage = 0;
   final PageController _pageController = PageController(viewportFraction: 1.0);
   late VideoPlayerController _controller0;
   late VideoPlayerController _controller1;
@@ -26,6 +28,9 @@ class _ReelsScreenState extends ConsumerState<ReelsScreen> {
   void dispose() {
     _pageController.dispose();
     _controller0.dispose();
+    _controller1.dispose();
+    _controller2.dispose();
+
     super.dispose();
   }
 
@@ -42,8 +47,6 @@ class _ReelsScreenState extends ConsumerState<ReelsScreen> {
 
   Widget text2(
       VideoPlayerController controller2, int index, List<Video> video) {
-    // _controller1.dispose();
-    // _controller0.dispose();
     controller2.play().then((value) {
       _controller1 =
           VideoPlayerController.networkUrl(Uri.parse(video[index + 1].videoUrl))
@@ -93,13 +96,19 @@ class _ReelsScreenState extends ConsumerState<ReelsScreen> {
               //   video: videoList,
               //   index: index,
               // );
+
               _controller0 = VideoPlayerController.networkUrl(
                   Uri.parse(videoList[index].videoUrl))
                 ..initialize();
-              return (index % 2 == 0)
-                  ? text(index == 0 ? _controller0 : _controller1, index,
-                      videoList)
-                  : text2(_controller2, index, videoList);
+              if (_lastPage < index) {
+                debugPrint('increasing');
+                return text(_controller0, index, videoList);
+              } else {
+                return (index % 2 == 0)
+                    ? text(index == 0 ? _controller0 : _controller1, index,
+                        videoList)
+                    : text2(_controller2, index, videoList);
+              }
             },
           );
         });
