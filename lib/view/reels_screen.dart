@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -5,7 +7,6 @@ import 'package:video_player/video_player.dart';
 import 'package:while_app/controller/feed_item.dart';
 import 'package:while_app/controller/videos_lists.dart';
 import 'package:while_app/data/model/video_model.dart';
-import 'package:while_app/resources/components/message/helper/dialogs.dart';
 import '../utils/data_provider.dart';
 import 'package:provider/provider.dart' as provi;
 
@@ -98,12 +99,14 @@ class _ReelsScreenState extends ConsumerState<ReelsScreen> {
               // );
 
               _controller0 = VideoPlayerController.networkUrl(
-                  Uri.parse(videoList[index].videoUrl))
+                  Uri.parse(videoList[0].videoUrl))
                 ..initialize();
-              if (_lastPage < index) {
-                debugPrint('increasing');
+              if (_lastPage > index) {
+                _lastPage--;
+                log('////increasing////');
                 return text(_controller0, index, videoList);
               } else {
+                _lastPage++;
                 return (index % 2 == 0)
                     ? text(index == 0 ? _controller0 : _controller1, index,
                         videoList)
