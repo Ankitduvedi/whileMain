@@ -5,7 +5,7 @@
 <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
-        android:label="while_app"
+        android:label="While"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon"
         android:usesCleartextTraffic="true">
