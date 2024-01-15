@@ -48,6 +48,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
           // shape: const CircularNotchedRectangle(),
           //color: currentTheme.primaryColor,
           child: TabBar(
+            dividerColor: Colors.transparent,
             controller: _controller,
             indicatorColor: Colors.white,
             indicatorSize: TabBarIndicatorSize.tab,

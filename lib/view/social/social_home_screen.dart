@@ -60,6 +60,7 @@ class _SocialScreenState extends State<SocialScreen>
             //backgroundColor: Colors.blue,
 
             appBar: AppBar(
+              toolbarHeight: 30,
               backgroundColor: Colors.black,
               title: isSearching
                   ? TextField(
@@ -157,21 +158,24 @@ class _SocialScreenState extends State<SocialScreen>
                     })
               ],
               bottom: TabBar(
+                dividerColor: Colors.transparent,
                 controller: _controller,
+                tabAlignment: TabAlignment.center,
                 indicatorColor: Colors.white,
+                indicatorSize: TabBarIndicatorSize.tab,
                 labelColor: Colors.white,
                 tabs: const [
                   Tab(
-                    text: 'Connect',
+                    text: 'Connect   ',
                   ),
                   Tab(
-                    text: 'Chats',
+                    text: 'Chats  ',
                   ),
                   Tab(
                     text: 'Community',
                   ),
                   Tab(
-                    text: 'Status',
+                    text: '    Status',
                   ),
                 ],
               ),

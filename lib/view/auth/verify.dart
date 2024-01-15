@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
 
 class MyVerify extends StatefulWidget {
-   MyVerify({Key? key,required this.verifyId}) : super(key: key);
-  String verifyId;
+  const MyVerify({Key? key, required this.verifyId}) : super(key: key);
+  final String verifyId;
 
   @override
   State<MyVerify> createState() => _MyVerifyState();
