@@ -60,7 +60,6 @@ class _ChatUserCardState extends State<ChatUserCard> {
       color: Colors.black,
       elevation: 0,
       child: InkWell(
-        splashColor: Colors.grey,
         onTap: () {
           // for navigating to chat screen
           Navigator.push(

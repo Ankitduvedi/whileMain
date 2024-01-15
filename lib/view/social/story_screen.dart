@@ -174,10 +174,10 @@ class StoryScreenState extends State<StoryScreen>
                               backgroundColor:
                                   const Color.fromARGB(255, 235, 235, 235)),
                           onPressed: () async {
-                            final img = await _getBytes(person['image']) ??
-                                await _getBytes(
-                                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRnQaBFUhEW2hDDsYP_Skq-wt-XGF9mek7YA&usqp=CAU');
-                            debugPrint(img);
+                            // final img = await _getBytes(person['image']) ??
+                            //     await _getBytes(
+                            //         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRnQaBFUhEW2hDDsYP_Skq-wt-XGF9mek7YA&usqp=CAU');
+                            // debugPrint(img);
                             // await DBHelper()
                             //     .addDataLocally(
                             //   wholeData: jsonEncode({
@@ -189,13 +189,12 @@ class StoryScreenState extends State<StoryScreen>
                             // )
                             //     .then((value) async {
                             //   print("added to local");
-                              // print(wholeDataList);
-                              await APIs.addChatUser(person['id'])
-                                  .then((value) {
-                                if (value) {
-                                  Dialogs.showSnackbar(context, 'User Added');
-                                }
-                              });
+                            // print(wholeDataList);
+                            await APIs.addChatUser(person['id']).then((value) {
+                              if (value) {
+                                Dialogs.showSnackbar(context, 'User Added');
+                              }
+                            });
                             // });
                           },
                           child: const Text('Follow',
